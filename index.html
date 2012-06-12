@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>Human Development Index (HDI) Tree</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="css/smoothness/jquery-ui-1.8.12.custom.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
+	
+	<!-- jQuery -->
+	<script type="text/javascript" src="js/jquery-1.5.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.12.custom.min.js"></script>
+	
+	<!-- Raphael Library -->
+	<script type="text/javascript" src="js/raphael.js"></script>
+	<script type="text/javascript" src="js/raphael.serialize.js"></script>
+	
+	<!-- Javascript for HDI  -->
+	<script type="text/javascript" src="js/hdi_tree.js"></script>
+	<script type="text/javascript" src="data/hdi_data.js"></script>
+	<script type="text/javascript" src="js/hdi_onload.js"></script>
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-23371483-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
+</head>
+
+<body>
+	<div class="share-container" style="display: none;">
+		<input style="width:98%" id="share_url" type="text" onclick="javascript:this.select();" />
+	</div>
+	<div id="container">
+		<h1 class="page-title">Human Development Index (HDI) Tree</h1>
+		<button id="help" title="Help">Help</button>
+		<button id="share" title="Share">Share</button>
+		<br class="clear" />
+		<div id="viz"></div>
+		<div id="selection">
+			<form class="tree_selection l" id="tree_left" action="">
+				<h2>HDI Tree 1</h2>
+				<select name="tree_left_country">
+					<option value=""></option>
+				</select>
+				<select name="tree_left_year">
+					<option value=""></option>
+				</select>
+				<div class="options">
+					<h2>Options</h2>
+					<p>
+						<input type="checkbox" name="show_labels1" /> Show Labels
+					</p>
+					<p>
+						<input type="checkbox" name="show_shadow1" /> Show Perfect Tree
+					</p>
+					<p>
+						<input type="checkbox" name="show_data1" /> Show Data
+					</p>
+				</div>
+				<table class="data">
+					<tr class="hdi">
+						<th class="border">HDI</th>
+						<td class="border">&nbsp;</td>
+					</tr>
+					<tr class="heading">
+						<th>Indexes</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="gdp">
+						<th>Income</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="life">
+						<th>Health</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="edu">
+						<th>Education</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="heading">
+						<th>Values</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="gdp">
+						<th>GNI per capita [PPP USD]</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="life">
+						<th>Life Expectancy [Years]</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="edu">
+						<th>Mean Years of Schooling</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="edu">
+						<th>Expected Years of Schooling</th>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+			</form>
+			<form class="tree_selection r" id="tree_right" action="">
+				<h2>HDI Tree 2</h2>
+				<select name="tree_right_country">
+					<option value=""></option>
+				</select>
+				<select name="tree_right_year">
+					<option value=""></option>
+				</select>
+				<div class="options">
+					<h2>Options</h2>
+					<p>
+						<input type="checkbox" name="show_labels2" /> Show Labels
+					</p>
+					<p>
+						<input type="checkbox" name="show_shadow2" /> Show Perfect Tree
+					</p>
+					<p>
+						<input type="checkbox" name="show_data2" /> Show Data
+					</p>
+				</div>
+				<table class="data">
+					<tr class="hdi">
+						<th class="border">HDI</th>
+						<td class="border">&nbsp;</td>
+					</tr>
+					<tr class="heading">
+						<th>Indexes</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="gdp">
+						<th>Income</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="life">
+						<th>Health</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="edu">
+						<th>Education</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="heading">
+						<th>Values</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="gdp">
+						<th>GNI per capita [PPP USD]</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="life">
+						<th>Life Expectancy [Years]</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="edu">
+						<th>Mean Years of Schooling</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr class="edu">
+						<th>Expected Years of Schooling</th>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+			</form>
+			<br class="clear" />
+			<hr />
+			<!-- <button class="export">Export &raquo;</button> -->
+		</div>
+		<div class="footer">
+			<p>A collaboration between:</p>
+			<img src="img/logo_macro_connections.png" alt="Macro Connections" />
+			<a href="http://www.media.mit.edu/"><img src="img/logo_media_lab.png" alt="MIT Media Lab" /></a>
+			<a href="http://www.hks.harvard.edu/centers/cid/"><img src="img/logo_cid.png" alt="Center for International Development at Harvard University" /></a>
+		</div>
+	</div>
+	<div class="help-container">
+		<h1>The HDI Tree</h1>
+		<div class="text">
+			<div class="explanation">
+				<p>is a <strong>visual representation</strong> that can be used to illustrate the Human Development Index together with its components and subcomponents. The design rules of the HDI tree are:</p>
+				<ul>
+				<li>The <strong>height</strong> of the tree trunk is proportional to the total <strong>value of the HDI</strong></li>
+				<li>The <strong>size</strong> of the three branches are proportional to each <strong>sub-indicator</strong></li>
+				<li>The <strong>branches are ordered</strong> in increasing order from left to right</li>
+				<li>The <strong>color of the trunk is the average</strong> of the color of the components</li>
+				</ul>
+				<div class="left">
+					<h2>Mathematical Representation</h2>
+					<img src="img/hdi_math.png" alt="HDI Tree Help" />
+				</div>
+				<div class="right">
+					<h2>Diagramatic Representation</h2>
+					<img src="img/hdi_diagram.png" alt="HDI Tree Help" />
+				</div>
+				<br class="clear" />
+			</div>
+		</div>
+		<div class="visual">
+			<img src="img/hdi_tree_help.png" alt="HDI Tree Help" />
+		</div>
+		<br class="clear" />
+		
+		<div class="left">
+			<h2>Source Data</h2>
+			<p>Visualizations were created using data on the Human Development Index and its components provided by the HDR office at the UNDP. The use of the dataset allows comparing countries for an extended period of time: 1980-2010.</p>
+		</div>
+		<div class="right">
+			<h2>Visual Metaphor (The HDI Tree)</h2>
+			<table>
+				<tr>
+					<th>HDIx: </th><td>Human Development Index</td>
+				</tr>
+				<tr>
+					<th>EDUx: </th><td>Education Index</td>
+				</tr>
+				<tr>
+					<th>GDPx: </th><td>Income Index</td>
+				</tr>
+				<tr>
+					<th>HEALTHx: </th><td>Health Index</td>
+				</tr>
+				<tr>
+					<th>MYSx: </th><td>Mean Years of Schooling Index</td>
+				</tr>
+				<tr>
+					<th>EYSx: </th><td>Expected Years of Schooling Index</td>
+				</tr>
+			</table>
+		</div>
+		<br class="clear" />
+		
+		<h2>Development Team</h2>
+		<table>
+			<tr>
+				<th>App Design: </th>
+				<td><a href="http://www.alexandersimoes.com/" target="_blank" title="Alexander Simoes' Homepage">A. Simoes</a></td>
+			</tr>
+			<tr>
+				<th>Concept: </th>
+				<td><a href="http://www.chidalgo.com/" target="_blank" title="César Hidalgo's Homepage">C.A. Hidalgo</a></td>
+			</tr>
+			<tr>
+				<th>Graphic Design: </th>
+				<td><a href="http://www.geoffhouse.com/" target="_blank" title="Geoff House's Homepage">G. House</a>, <a href="http://www.davelandrydesign.com/" target="_blank" title="Dave Landry's Homepage">D. Landry</a>, <a href="http://isabelmeirelles.com/" target="_blank" title="Isabel Meirelles' Homepage">I. Meirelles</a>, <a href="http://www.alexandersimoes.com/" target="_blank" title="Alexander Simoes' Homepage">A. Simoes</a></td>
+			</tr>
+			<tr>
+				<th>Background Paper: </th>
+				<td>Graphical Statistical Methods for the Representation of the Human Development Index and Its Components. CA Hidalgo. Human Development Research Paper 2010/39 (2010)</td>
+			</tr>
+		</table>
+		
+		<br class="clear" />
+	</div>
+</body>
+</html>

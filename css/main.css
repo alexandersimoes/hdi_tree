@@ -1,0 +1,204 @@
+body {
+	font-family: arial,sans-serif;
+	font-size: 62.5%;
+	line-height: 15px;
+}
+h1.page-title{
+	float: left;
+	line-height: 24px;
+	margin: 15px 0;
+}
+a {
+	color: #000;
+}
+a img {
+	border: none;
+	outline: none;
+}
+a:hover {
+	text-decoration: none;
+}
+button#help, button#share {
+	float: right;
+	margin: 10px 0 0 10px;
+}
+.clear {
+	clear: both;
+}
+#container {
+	margin: auto;
+	padding: 20px;
+	width: 900px;
+}
+#viz {
+	border: 1px solid black;
+	height: 425px;
+	width: 900px;
+	
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;	
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+#selection {
+	/*border: 1px solid black;*/
+	margin: 0 80px;
+}
+form.tree_selection {
+	/*border: 1px solid red;*/
+	float: left;
+	width: 300px;
+}
+form.tree_selection h2 {
+	margin: 15px 0;
+}
+form.tree_selection.r {
+	float: right;
+}
+form.tree_selection select{
+	font-size: 14px;
+	display: block;
+	margin: 0 0 10px 0;
+	width: 200px;
+}
+form.tree_selection .options {
+	border: 1px solid black;
+	clear: both;
+	margin: 10px 0;
+	padding: 10px;
+	
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;	
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+form.tree_selection .options h2 {
+	padding: 0;
+	margin: 0 0 15px 0;
+}
+form.tree_selection .options p {
+	margin: 0 0 5px 0;
+}
+form.tree_selection .options input {
+	padding: 0;
+	margin: 0 5px 0 0;
+}
+hr {
+	margin: 20px 0;
+}
+button {
+	font-size: 14px;
+}
+	
+/* DATA TABLE */
+table.data {
+	display: none;
+	border: solid 1px #000;
+	border-collapse: collapse;
+	font-size: 12px;
+	margin: 10px 0 0 0;
+	width: 100%;
+	
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;	
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+table.data td, table.data th{
+	padding: 2px 8px;
+	width: 70px;
+}
+table.data th {
+	border-right: solid 1px #000;
+	text-align: left;
+	width: 200px;
+	text-indent: 10px;
+}
+table.data td.border, table.data th.border {
+	border-bottom: solid 1px #000;
+}
+table.data .hdi {
+	font-size: 18px;
+	font-weight: bold;
+}
+table.data .hdi th {
+	text-indent: 0 !important;
+}
+table.data .heading {
+	background: #DDD;
+	font-size: 14px;
+	font-weight: bold;
+}
+table.data .heading th {
+	text-indent: 0 !important;
+}
+table.data .gdp{
+	/*background: #F1CF9A;*/
+	color: #D9A400;
+}
+table.data .life{
+	/*background: #8BBBEF;*/
+	color: #C93116;
+}
+table.data .edu{
+	/*background: #EB9092;*/
+	color: #4B69EA;
+}
+
+.footer {
+	margin: 40px 0 0 0;
+}
+.footer a img {
+	float: none;
+	margin: 0 0 0 145px;
+}
+
+/* FOR HELP FILE */
+div.help-container {
+	overflow: hidden !important;
+}
+	div.help-container h1 {
+		border-bottom: solid 1px #000;
+		margin: 10px 0 0 0;
+		padding: 0 0 10px 0;
+	}
+	div.help-container h2 {
+		font-size: 14px;
+	}
+	.help-container div.visual {
+		float: left;
+		width: 100px;
+	}
+	.help-container div.text {
+		float: left;
+		width: 365px;
+	}
+		.help-container div.text ul {
+			margin: 0;
+			padding: 0 0 0 15px;
+		}
+	.help-container .left {
+		float: left;
+		width: 50%;
+	}
+	.help-container .right {
+		float: right;
+		margin: 0 0 0 10px;
+		width: 45%;
+	}
+	.help-container .text .right {
+		float: right;
+		margin: 0 0 0 10px;
+		width: 40%;
+	}
+	.help-container table tr {
+	}
+	.help-container .right table th {
+		text-align: left;
+		width: 65px;
+	}
+	.help-container table th {
+		text-align: left;
+		width: 110px;
+		vertical-align: top;
+	}
