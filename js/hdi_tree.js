@@ -42,10 +42,12 @@ function setup(element, width, height){
 function set_defaults(country1, year1, country2, year2, show_outlines, show_labels){
 
 	// Set defaults
-	$($("select").get(0)).val(country1);
-	$($("select").get(1)).val(year1);
-	$($("select").get(2)).val(country2);
-	$($("select").get(3)).val(year2);
+	$("select[name='tree_left_country']").val(country1);
+	$("select[name='tree_left_year']").val(year1);
+
+	$("select[name='tree_right_country']").val(country2);
+	$("select[name='tree_right_year']").val(year2);
+
 	$('input[name="show_labels1"]').attr("checked", true);
 	$('input[name="show_labels2"]').attr("checked", true);
 	$('input[name="show_outlines1"]').attr("checked", false);
@@ -57,10 +59,12 @@ function set_defaults(country1, year1, country2, year2, show_outlines, show_labe
 
 function refresh(){
 
-	var country1 = $($("select").get(0)).val();
-	var year1 = $($("select").get(1)).val();
-	var country2 = $($("select").get(2)).val();
-	var year2 = $($("select").get(3)).val();
+	var country1 = $("select[name='tree_left_country']").val();
+	var year1 = $("select[name='tree_left_year']").val();
+
+	var country2 = $("select[name='tree_right_country']").val();
+	var year2 = $("select[name='tree_right_year']").val();
+	
 	var show_labels1 = $('input[name="show_labels1"]').is(":checked");
 	var show_labels2 = $('input[name="show_labels2"]').is(":checked");
 	var show_outlines1 = $('input[name="show_outlines1"]').is(":checked");
